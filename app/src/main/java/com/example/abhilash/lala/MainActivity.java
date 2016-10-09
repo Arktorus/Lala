@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         myListView = (ListView) findViewById(R.id.listView1);
-        mArrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
+        mArrayAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1);
         myListView.setAdapter(mArrayAdapter);
 
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         if (mBluetoothAdapter == null){
             Toast.makeText(getApplicationContext(), "Bluetooth adapter not found", Toast.LENGTH_LONG).show();
         }
-        else if(!mBluetoothAdapter.isDiscovering() && mBluetoothAdapter != null && mBluetoothAdapter.isEnabled() == true) { //If discovery is not on, change Start discovery
+        else if(!mBluetoothAdapter.isDiscovering() && mBluetoothAdapter != null && mBluetoothAdapter.isEnabled()) { //If discovery is not on, change Start discovery
             ((Button) v).setText("Stop Discovery");
             System.out.println("Starting discovery");
             mArrayAdapter.clear();
@@ -130,6 +130,9 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    public void Alert_Dialog_Show(){
+
+    }
 
     @Override
     public void onPause() {
